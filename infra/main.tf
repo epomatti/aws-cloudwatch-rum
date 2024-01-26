@@ -19,7 +19,7 @@ resource "aws_amplify_app" "frontend" {
   platform                 = "WEB"
 
   environment_variables = {
-    # AMPLIFY_MONOREPO_APP_ROOT = "frontend"
+    AMPLIFY_MONOREPO_APP_ROOT = "frontend"
     _CUSTOM_IMAGE             = "public.ecr.aws/docker/library/node:20"
   }
 }
