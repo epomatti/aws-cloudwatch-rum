@@ -1,4 +1,4 @@
-github_access_token = "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"
+github_access_token = ""
 
 # RUM
 rum_guest_role_arn     = ""
