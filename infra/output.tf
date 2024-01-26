@@ -1,3 +1,3 @@
-output "amplify_default_domain" {
-  value = aws_amplify_app.frontend.default_domain
+output "main_domain" {
+  value = local.main_domain
 }

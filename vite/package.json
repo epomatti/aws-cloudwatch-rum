@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aws-rum-web": "^1.16.1",
     "vue": "^3.3.11"
   },
   "devDependencies": {

@@ -29,10 +29,18 @@ resource "aws_amplify_branch" "main" {
   branch_name = "main"
   framework   = "Vue"
   stage       = "PRODUCTION"
-
 }
 
 resource "aws_amplify_webhook" "main" {
   app_id      = aws_amplify_app.frontend.id
   branch_name = aws_amplify_branch.main.branch_name
+}
+
+locals {
+  main_domain = "${aws_amplify_branch.main.branch_name}.${aws_amplify_app.frontend.default_domain}"
+}
+
+resource "aws_rum_app_monitor" "vue" {
+  name   = "vue"
+  domain = local.main_domain
 }
