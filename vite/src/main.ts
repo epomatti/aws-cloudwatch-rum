@@ -4,22 +4,27 @@ import App from './App.vue'
 
 import { AwsRum, AwsRumConfig } from 'aws-rum-web';
 
+const rumGuestRoleArn = import.meta.env.VITE_RUM_GUEST_ROLE_ARN;
+const rumIdentityPoolId = import.meta.env.VITE_RUM_IDENTITY_POOL_ID;
+const rumEndpoint = import.meta.env.VITE_RUM_ENDPOINT;
+const rumApplicationId = import.meta.env.VITE_RUM_APPLICATION_ID;
+const rumApplicationRegion = import.meta.env.VITE_RUM_APPLICATION_REGION;
+
 try {
   const config: AwsRumConfig = {
     sessionSampleRate: 1,
-    guestRoleArn: "arn:aws:iam::130107406234:role/RUM-Monitor-us-east-2-130107406234-2690038326071-Unauth",
-    identityPoolId: "us-east-2:fcffe583-3d3e-40e4-86f6-b0b97f446d8a",
-    endpoint: "https://dataplane.rum.us-east-2.amazonaws.com",
-    telemetries: ["performance","errors","http"],
+    guestRoleArn: rumGuestRoleArn,
+    identityPoolId: rumIdentityPoolId,
+    endpoint: rumEndpoint,
+    telemetries: ["performance", "errors", "http"],
     allowCookies: true,
-    enableXRay: false
+    enableXRay: true
   };
 
-  const APPLICATION_ID: string = 'c0ab3a89-a417-4e1b-bf71-6d1d1ad97c26';
+  const APPLICATION_ID: string = rumApplicationId;
   const APPLICATION_VERSION: string = '1.0.0';
-  const APPLICATION_REGION: string = 'us-east-2';
+  const APPLICATION_REGION: string = rumApplicationRegion;
 
-  // const awsRum: AwsRum = new AwsRum(
   new AwsRum(
     APPLICATION_ID,
     APPLICATION_VERSION,
