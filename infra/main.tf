@@ -45,4 +45,3 @@ resource "aws_amplify_webhook" "main" {
 locals {
   main_domain = "${aws_amplify_branch.main.branch_name}.${aws_amplify_app.frontend.default_domain}"
 }
-
