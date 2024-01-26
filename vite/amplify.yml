@@ -1,12 +1,10 @@
 version: 1
 applications:
   - frontend:
-    appRoot: frontend
+    appRoot: vite
     phases:
       preBuild:
         commands:
-          - echo "HAHAHAHHAHAH"
-          - ls
           - yarn set version stable
           - yarn install
       build:
