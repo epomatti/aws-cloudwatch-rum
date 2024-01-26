@@ -21,6 +21,12 @@ resource "aws_amplify_app" "frontend" {
   environment_variables = {
     AMPLIFY_MONOREPO_APP_ROOT = "vite"
     _CUSTOM_IMAGE             = "public.ecr.aws/docker/library/node:20"
+
+    VITE_RUM_GUEST_ROLE_ARN     = var.rum_guest_role_arn
+    VITE_RUM_IDENTITY_POOL_ID   = var.rum_identity_pool_id
+    VITE_RUM_ENDPOINT           = var.rum_endpoint
+    VITE_RUM_APPLICATION_ID     = var.rum_application_id
+    VITE_RUM_APPLICATION_REGION = var.rum_application_region
   }
 }
 
