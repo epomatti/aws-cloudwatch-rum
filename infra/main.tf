@@ -13,7 +13,7 @@ provider "aws" {
 
 resource "aws_amplify_app" "frontend" {
   name                     = "amplify-rum"
-  repository               = "https://github.com/epomatti/aws-cloudwatch-rum.git"
+  repository               = "https://github.com/epomatti/aws-cloudwatch-rum"
   access_token             = var.github_access_token
   enable_branch_auto_build = true
   platform                 = "WEB"

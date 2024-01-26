@@ -1,17 +1,18 @@
 version: 0.1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - yarn set version stable
-        - yarn install
-    build:
-      commands:
-        - yarn build
-  artifacts:
-    baseDirectory: ./dist
-    files:
-      - "**/*"
-  cache:
-    paths:
-      - node_modules/**/*
+applications:
+  frontend:
+    phases:
+      preBuild:
+        commands:
+          - yarn set version stable
+          - yarn install
+      build:
+        commands:
+          - yarn build
+    artifacts:
+      baseDirectory: ./dist
+      files:
+        - "**/*"
+    cache:
+      paths:
+        - node_modules/**/*
