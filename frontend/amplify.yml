@@ -1,9 +1,11 @@
 version: 1
 applications:
-  - frontend:
+  - appRoot: frontend
+    frontend:
       phases:
         preBuild:
           commands:
+            - ls
             - yarn set version stable
             - yarn install
         build:
@@ -16,4 +18,3 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-    # appRoot: .
