@@ -40,7 +40,7 @@ locals {
   main_domain = "${aws_amplify_branch.main.branch_name}.${aws_amplify_app.frontend.default_domain}"
 }
 
-resource "aws_rum_app_monitor" "vue" {
-  name   = "vue"
-  domain = local.main_domain
-}
+# resource "aws_rum_app_monitor" "vue" {
+#   name   = "vue"
+#   domain = local.main_domain
+# }
