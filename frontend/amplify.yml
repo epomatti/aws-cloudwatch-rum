@@ -1,21 +1,21 @@
 version: 1
 applications:
-  - appRoot: frontend
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - echo "HAHAHAHHAHAH"
-            - ls
-            - yarn set version stable
-            - yarn install
-        build:
-          commands:
-            - yarn build
-      artifacts:
-        baseDirectory: ./dist
-        files:
-          - "**/*"
-      cache:
-        paths:
-          - node_modules/**/*
+  - frontend:
+    appRoot: frontend
+    phases:
+      preBuild:
+        commands:
+          - echo "HAHAHAHHAHAH"
+          - ls
+          - yarn set version stable
+          - yarn install
+      build:
+        commands:
+          - yarn build
+    artifacts:
+      baseDirectory: ./dist
+      files:
+        - "**/*"
+    cache:
+      paths:
+        - node_modules/**/*
