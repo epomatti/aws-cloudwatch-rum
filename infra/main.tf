@@ -27,8 +27,8 @@ resource "aws_amplify_app" "frontend" {
 resource "aws_amplify_branch" "main" {
   app_id      = aws_amplify_app.frontend.id
   branch_name = "main"
-  # framework   = "Vue"
-  stage = "PRODUCTION"
+  framework   = "Vue"
+  stage       = "PRODUCTION"
 
 }
 
